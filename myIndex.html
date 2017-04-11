@@ -6,7 +6,8 @@
 		<title>我叫陈跃利</title>
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
 		<link rel="stylesheet" href="css/myAnimate.css">
-		
+		<link rel="stylesheet" href="css/index.css">
+
 		<style>
 			.section {
 				text-align: center;
@@ -79,53 +80,13 @@
 				z-index: 1000;
 			}
 			
-			.presitation h3 {
-				margin: 10px;
-				font-size: 50px;
+			.hidden {
+				display: none;
 			}
 			
-			.presitation h4 {
-				/*margin-top:0;*/
-			}
-			
-			.img-wrapper {
-				position: relative;
-				margin: 40px auto;
-				width: 960px;
-				height: 620px;
-				/*border:1px solid red;*/
-			}
-			
-			.img-wrapper img {
-				/*float: left;*/
-				position: absolute;
-			}
-			
-			
-			
-			.img2 {
-				right: 0;
-				top: 0;
-			}
-			
-			.img3 {
-				right: 0;
-				top: 200px;
-			}
-			
-			.img4 {
-				left: 0;
-				bottom: 0;
-			}
-			
-			.img5 {
-				left: 300px;
-				bottom: 0;
-			}
-			
-			.img6 {
-				right: 0;
-				bottom: 0;
+			.projects a {
+				background-image: url("assets/img/tab_btn_bj.png");
+				z-index: 100px;
 			}
 		</style>
 	</head>
@@ -145,7 +106,7 @@
 		</audio>
 
 		<div id="dowebok">
-			
+
 			<div class="section">
 				<img src="assets/img/head.png" width="300px">
 				<h3>陈跃利</h3>
@@ -153,33 +114,29 @@
 				<p>给我一个机会，我会证明给你看</p>
 				<p>GIVE ME A CHANCE, I'LL PROVE IT TO YOU</p>
 			</div>
-			<div class="section presitation">
-				<h3>个人展示</h3>
-				<h4>Personal Presitation</h4>
-				<div class="img-wrapper">
-					<img src="assets/img/rcs1.jpg" class="img1" height="400px">
-					<img src="assets/img/健身.jpg" class="img2" height="200px;">
-					<img src="assets/img/健身1.jpg" class="img3" height="200px;">
-					<img src="assets/img/兰州.jpg" class="img4" height="200px;">
-					<img src="assets/img/電影1.jpg" class="img5" height="200px;">
-					<img src="assets/img/登山.jpg" class="img6" height="200px;">
-				</div>
-			</div>
+
 			<div class="section">
 				<h3>个人资料</h3>
 				<img src="assets/img/resume1.jpg" />
 			</div>
 			<div class="section">
-				<div class="slide">
+				<div class="slide skills">
 
 					<h3>专业技能</h3>
-					<div id="skills" style="width: 600px;height:400px;"></div>
-					<ul>
+					<div class="projects">
+						<img src="assets/img/tab_btn_bj.png">
+						<a href="javascript:;" style="opacity:1">
+							<span>家教网</span>
+							<p>Tutor</p>
+						</a>
+					</div>
+					<!--<div id="skills" style="width: 600px;height:400px;" class = "hidden"></div>-->
+					<ol class="skill-text">
 						<li>精通Javascript、HTML5和CSS3等Web前端技术，能熟练编写代码，</li>
 						<li>有良好注释及文档撰写习惯，能参与前端代码编写规范的制定；</li>
 						<li>对用户体验、交互操作流程有深刻理解，在可用性、性能、实现完美界面效果等方面有实践经验；</li>
 						<li>较强的团队协作能力与沟通能力，并与设计人员，程序开发人员进行较好的配合；</li>
-					</ul>
+					</ol>
 
 				</div>
 				<div class="slide">
@@ -191,14 +148,18 @@
 					<a href="http://www.chenyuelili.com" target="_blank">Go See See</a>
 				</div>
 			</div>
-			<!--<div class="section">
-				<img src="assets/img/rcs1.jpg" width="800px">
-				<img src="assets/img/兰州.jpg" width="300px;">
-				<img src="assets/img/健身.jpg" width="300px;">
-				<img src="assets/img/健身1.jpg" width="300px;">
-				<img src="assets/img/電影1.jpg" width="300px;">
-				<img src="assets/img/電影2.jpg" width="300px;">
-			</div>-->
+			<div class="section presitation">
+				<h3>个人展示</h3>
+				<h4>Personal Presitation</h4>
+				<div class="img-wrapper">
+					<img src="assets/img/rcs1.jpg" class="img1 animated" height="300px">
+					<img src="assets/img/健身.jpg" class="img2 animated" height="145px;">
+					<img src="assets/img/健身1.jpg" class="img3 animated" height="145px;">
+					<img src="assets/img/兰州.jpg" class="img4 animated" height="200px;">
+					<img src="assets/img/電影1.jpg" class="img5 animated" height="200px;">
+					<img src="assets/img/登山.jpg" class="img6 animated" height="200px;">
+				</div>
+			</div>
 			<div class="section">
 				<h3>我期待一个自我展示的舞台</h3>
 				<p>陈跃利</p>
@@ -215,13 +176,14 @@
 			$(function() {
 				$('#dowebok').fullpage({
 					//					sectionsColor: ['#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(53, 181, 210)', 'rgb(142, 108, 211)'],
-					sectionsColor: ['rgb(53, 181, 210)', '#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(142, 108, 211)'],
+					sectionsColor: ['#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(53, 181, 210)', 'rgb(142, 108, 211)'],
 					loopBottom: true,
 					'navigation': true,
+					anchors: ["page1", "page2", "page3", "page4", "page5"],
 					afterLoad: function(anchorLink, index) {
 						if(index == 2) {
-//							alert("2");
-							document.getElementsByClassName("img1")[0].classList.add("fadeInLeft");
+							//							alert("2");
+
 							$('.section2').find('p').delay(500).animate({
 								left: '0'
 							}, 1500, 'easeOutExpo');
@@ -232,20 +194,30 @@
 							}, 1500, 'easeOutExpo');
 						}
 						if(index == 4) {
-							$('.section4').find('p').fadeIn(2000);
+							document.getElementsByClassName("img1")[0].classList.add("fadeInImg1");
+							document.getElementsByClassName("img2")[0].classList.add("fadeInImg2");
+							document.getElementsByClassName("img3")[0].classList.add("fadeInImg3");
+							document.getElementsByClassName("img4")[0].classList.add("fadeInImg4");
+							document.getElementsByClassName("img5")[0].classList.add("fadeInImg5");
+							document.getElementsByClassName("img6")[0].classList.add("fadeInImg6");
 						}
 					},
 					onLeave: function(index, direction) {
 						if(index == '2') {
-//							alert("leave");
+
 						}
 						if(index == '3') {
-							$('.section3').find('p').delay(500).animate({
-								bottom: '-120%'
-							}, 1500, 'easeOutExpo');
+
 						}
 						if(index == '4') {
-							$('.section4').find('p').fadeOut(2000);
+							setTimeout(function() {
+								document.getElementsByClassName("img1")[0].classList.remove("fadeInImg1");
+								document.getElementsByClassName("img2")[0].classList.remove("fadeInImg2");
+								document.getElementsByClassName("img3")[0].classList.remove("fadeInImg3");
+								document.getElementsByClassName("img4")[0].classList.remove("fadeInImg4");
+								document.getElementsByClassName("img5")[0].classList.remove("fadeInImg5");
+								document.getElementsByClassName("img6")[0].classList.remove("fadeInImg6");
+							}, 500);
 						}
 					}
 				});
