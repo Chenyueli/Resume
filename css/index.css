@@ -307,10 +307,4 @@ table td:hover,table th :hover{
 	font-family: arial;
 	letter-spacing: 1px;
 }
-.advantage{
-	/*position: fixed;*/
-	margin-top:20px;
-	bottom:0;
-	
-	z-index:1000;
-}
+
