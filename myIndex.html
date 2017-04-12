@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<title>我叫陈跃利</title>
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
+		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/myAnimate.css">
 		<link rel="stylesheet" href="css/index.css">
 
@@ -15,34 +16,6 @@
 				color: #fff;
 			}
 			/*cyl*/
-			
-			html,
-			body,
-			div,
-			p,
-			ul,
-			li,
-			dl,
-			dt,
-			dd,
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6,
-			form,
-			input,
-			select,
-			button,
-			textarea,
-			iframe,
-			table,
-			th,
-			td {
-				margin: 0;
-				padding: 0;
-			}
 			
 			.clock {
 				display: inline-block;
@@ -68,10 +41,6 @@
 				color: #fff;
 			}
 			
-			h3 {
-				font-size: 50px;
-			}
-			
 			.music {
 				display: inline-block;
 				position: fixed;
@@ -87,6 +56,14 @@
 			.projects a {
 				background-image: url("assets/img/tab_btn_bj.png");
 				z-index: 100px;
+			}
+			
+			.clear:after {
+				content: "";
+				display: block;
+				clear: both;
+				height: 0;
+				visibility: hidden;
 			}
 		</style>
 	</head>
@@ -106,51 +83,149 @@
 		</audio>
 
 		<div id="dowebok">
-
-			<div class="section">
-				<img src="assets/img/head.png" width="300px">
+			<div class="section page1 flash">
+				<img src="assets/img/cyl.jpg" width="150px" class="img-circle ">
 				<h3>陈跃利</h3>
 				<p>求职：Web前端工程师</p>
 				<p>给我一个机会，我会证明给你看</p>
 				<p>GIVE ME A CHANCE, I'LL PROVE IT TO YOU</p>
 			</div>
 
-			<div class="section">
-				<h3>个人资料</h3>
-				<img src="assets/img/resume1.jpg" />
-			</div>
-			<div class="section">
-				<div class="slide skills">
+			<div class="section page2">
+				<h3>Personal Profile</h3>
+				<table border="1">
+					<tr>
+						<th>姓名</th>
+						<td>陈跃利</td>
+						<th>专业</th>
+						<td>信息电子科学与技术</td>
+						<td rowspan="2"><img src="assets/img/cyl.jpg " width="100px" /></td>
 
-					<h3>专业技能</h3>
-					<div class="projects">
-						<img src="assets/img/tab_btn_bj.png">
-						<a href="javascript:;" style="opacity:1">
-							<span>家教网</span>
-							<p>Tutor</p>
-						</a>
-					</div>
-					<!--<div id="skills" style="width: 600px;height:400px;" class = "hidden"></div>-->
-					<ol class="skill-text">
+					</tr>
+					<tr>
+						<th>学历</th>
+						<td>硕士</td>
+						<td>政治面貌</td>
+						<td>中共党员</td>
+					</tr>
+					<tr>
+						<th rowspan="2">教育背景</th>
+						<td rowspan="2">厦门大学</td>
+						<td rowspan="2">电子科学系</td>
+						<td>本科</td>
+						<td><i>9/66</i></td>
+					</tr>
+					<tr>
+						<td>硕士 </td>
+						<td><i>4/31</i></td>
+					</tr>
+					<tr>
+						<th>在校经历</th>
+						<td >2013.07-2014.09</td>
+						<td colspan="3" style = "text-align: left; ">厦门大学首批网络文化工作室 Nova前端负责人;<br/>负责并开发了外贸电商网站、厦大家教网、物资申领系统、运动会乘车统计等项目.</td>
+					</tr>
+					<tr>
+						<th rowspan="3">获奖经历</th>
+					
+						<td >2011.09-2015.06</td>
+						<td colspan="3"> 连续三年获得校级奖学金、优秀三好学生，因成绩优异保送研究生</td>
+					</tr>
+					
+					<tr>
+						<td>2014.09-2015.06</td>
+						<td colspan="2">全国大学生机器人大赛</td><td> 一等奖</td>
+					</tr>
+					<tr>
+						<td>2014.09-2015.06</td>
+						<td colspan="2">厦大机器人队暑期夏令营程序组 </td><td>三等奖</td>
+					</tr>
+					<tr>
+						<th>自我评价</th>
+						<td colspan="4">积极乐观、充满热情，创意丰富，有较强的自学能力、沟通能力和团队协作能力。</td>
+					</tr>
+					<tr>
+						<th>好友标签</th>
+						<td colspan="4">小小只、乐天派、元气少女、技术达人、运动达人</td>
+					</tr>
+					<tr>
+						<th>技术标签</th>
+						<td colspan="4">响应式、移动开发、Web开发、单页应用</td>
+					</tr>
+				</table>
+			</div>
+			<div class="section page3">
+				<h3>Skills</h3>
+				<div class="container">
+					<ol class="text">
 						<li>精通Javascript、HTML5和CSS3等Web前端技术，能熟练编写代码，</li>
 						<li>有良好注释及文档撰写习惯，能参与前端代码编写规范的制定；</li>
 						<li>对用户体验、交互操作流程有深刻理解，在可用性、性能、实现完美界面效果等方面有实践经验；</li>
 						<li>较强的团队协作能力与沟通能力，并与设计人员，程序开发人员进行较好的配合；</li>
 					</ol>
-
-				</div>
-				<div class="slide">
-					<h3>项目经历1：家教网</h3>
-					<a href="http://test.yizhipbb.cn/develop/my/laravel/public/index.php/user/index#" target="_blank">去看看</a>
-				</div>
-				<div class="slide">
-					<h3>个人博客</h3>
-					<a href="http://www.chenyuelili.com" target="_blank">Go See See</a>
+					<div id="skills" style="width: 340px;height:340px;"></div>
 				</div>
 			</div>
+			<div class="section page4">
+				<h3>Projects</h3>
+				<div class="projects">
+					<a class="project-1" href="http://www.chenyuelili.com" target="_blank">
+						<div>
+							<span>个人博客</span>
+							<p>Blog</p>
+						</div>
+					</a>
+					<a class="project-1" href="http://test.yizhipbb.cn/develop/my/laravel/public/index.php/user/index" target="_blank">
+						<div>
+							<span>家教APP</span>
+							<p>Tutor APP</p>
+						</div>
+					</a>
+
+					<a class="project-1" href="http://www.jancostavip.com/" target="_blank">
+						<div>
+							<span>外贸电商</span>
+							<p>vip.com</p>
+						</div>
+					</a>
+					<a class="project-1" href="http://test.novaxmu.cn/templates/cargo/chris/dist/index.html" target="_blank">
+						<div>
+							<span>物资管理</span>
+							<p>Manage Item </p>
+						</div>
+					</a>
+				</div>
+
+				<!--<div class="project-main clear">-->
+				<!--<div class="project-nav">
+							<a class= "active">个人博客</a>
+							<a>家教APP</a>
+							<a>外贸电商网站</a>
+							<a>南方物资管理网站</a>
+						</div>-->
+				<!--<div class="project-container">-->
+
+				<!--<div class = "">
+								<h3>个人博客</h3>
+								<a href="http://www.chenyuelili.com" target="_blank">Go See See</a>
+							</div>
+							<div class = "hidden">
+								<h3>家教APP</h3>
+								<a href="http://test.yizhipbb.cn/develop/my/laravel/public/index.php/user/index#" target="_blank">去看看</a>
+							</div>
+							<div class = "hidden">
+								<h3>外贸电商网站</h3>
+								<a href="http://www.chenyuelili.com" target="_blank">Go See See</a>
+							</div>
+							<div class = "hidden">
+								<h3>南方物资管理网</h3>
+								<a href="http://www.chenyuelili.com" target="_blank">Go See See</a>
+							</div>-->
+				<!--</div>-->
+				<!--</div>-->
+			</div>
 			<div class="section presitation">
-				<h3>个人展示</h3>
-				<h4>Personal Presitation</h4>
+				<h3>Personal Presitation</h3>
+
 				<div class="img-wrapper">
 					<img src="assets/img/rcs1.jpg" class="img1 animated" height="300px">
 					<img src="assets/img/健身.jpg" class="img2 animated" height="145px;">
@@ -160,46 +235,62 @@
 					<img src="assets/img/登山.jpg" class="img6 animated" height="200px;">
 				</div>
 			</div>
-			<div class="section">
-				<h3>我期待一个自我展示的舞台</h3>
-				<p>陈跃利</p>
-				<p>18860028875 896671603@qq.com</p>
-				<img src="assets/img/weixin.png" width="300px" />
+			<div class="section page6">
+				<h3>人生格言：自律给我自由</h3>
+				<p class="request">我期待一个自我展示的舞台</p>
+				<div class="wrapper">
+					<img src="assets/img/weixin.png" width="200px" class="weichat" />
+					<div class="text">
+						<h4>陈跃利</h4>
+						<!--<hr>-->
+						<p>Phone: 18860028875 </p>
+						<p>Email: 896671603@qq.com</p>
+						<a href="https://github.com/Chenyueli/Resume" target="_blank">github.com/Chenyueli/Resume</a>
+						<!--<hr>-->
+					</div>
+				</div>
+				<p class= "advantage">Advantage：扎实的前端基础，丰富的实战经验，善于归纳总结，随时更新的技术博客.</p>
+				
+
 			</div>
 		</div>
 
 		<script src="js/jquery-1.11.0.min.js"></script>
 		<script src="js/jquery.fullPage.min.js"></script>
 		<script src="js/echarts.simple.min.js"></script>
+		<script>
+			
+		</script>
 
 		<script>
 			$(function() {
 				$('#dowebok').fullpage({
 					//					sectionsColor: ['#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(53, 181, 210)', 'rgb(142, 108, 211)'],
-					sectionsColor: ['#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(53, 181, 210)', 'rgb(142, 108, 211)'],
+					sectionsColor: ['#f90', 'rgb(235, 180, 64)', 'rgb(72, 214, 132)', 'rgb(53, 181, 210)', '#4BBFC3', 'rgb(142, 108, 211)'],
 					loopBottom: true,
 					'navigation': true,
-					anchors: ["page1", "page2", "page3", "page4", "page5"],
+					anchors: ["page1", "page2", "page3", "page4", "page5", "page6"],
 					afterLoad: function(anchorLink, index) {
 						if(index == 2) {
-							//							alert("2");
+//						
 
-							$('.section2').find('p').delay(500).animate({
-								left: '0'
-							}, 1500, 'easeOutExpo');
+
+							
 						}
 						if(index == 3) {
-							$('.section3').find('p').delay(500).animate({
-								bottom: '0'
-							}, 1500, 'easeOutExpo');
+							
 						}
-						if(index == 4) {
+						if(index == 5) {
 							document.getElementsByClassName("img1")[0].classList.add("fadeInImg1");
 							document.getElementsByClassName("img2")[0].classList.add("fadeInImg2");
 							document.getElementsByClassName("img3")[0].classList.add("fadeInImg3");
 							document.getElementsByClassName("img4")[0].classList.add("fadeInImg4");
 							document.getElementsByClassName("img5")[0].classList.add("fadeInImg5");
 							document.getElementsByClassName("img6")[0].classList.add("fadeInImg6");
+						}
+						if(index == 6) {
+							document.getElementsByClassName("weichat")[0].classList.add("fadeInImg4");
+							document.getElementsByClassName("text")[0].classList.add("fadeInImg3");
 						}
 					},
 					onLeave: function(index, direction) {
@@ -209,7 +300,7 @@
 						if(index == '3') {
 
 						}
-						if(index == '4') {
+						if(index == '5') {
 							setTimeout(function() {
 								document.getElementsByClassName("img1")[0].classList.remove("fadeInImg1");
 								document.getElementsByClassName("img2")[0].classList.remove("fadeInImg2");
