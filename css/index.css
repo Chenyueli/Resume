@@ -213,6 +213,9 @@ table td:hover,table th :hover{
 	align-items: center;
 	justify-content: center;
 }
+.QR-code img{
+	margin:20px;
+}
 
 .presitation h3 {
 	margin-bottom: 80px;
