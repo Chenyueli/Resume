@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器组件</title>
+		<style>
+			.main{
+				margin: 100px auto 0 auto;
+				text-align: center;
+			}
+			#timmer-container {
+				/*width:100px;*/
+				font-size: 100px;
+				margin-bottom:50px;
+			}
+			button{
+				margin:20px;
+				padding:5px 10px;
+				font-size:32px;
+				border-radius: 5px;
+				background-color: #f56;
+				color:#fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class = "main">
+			<div id="timmer-container">00:00</div>
+			<button id="start-btn">Start</button>
+			<button id="stop-btn">Stop</button>
+			<button id="pause-btn">Pause</button>
+		</div>
+		<script>
+			var timeEle = document.getElementById("count-timmer");
+
+			var tContainer = document.getElementById("timmer-container");
+			var startBtn = document.getElementById("start-btn");
+			var stopBtn = document.getElementById("stop-btn");
+			var pauseBtn = document.getElementById("pause-btn");
+
+			var time = new Timing(tContainer, startBtn, stopBtn, pauseBtn);
+
+			/**
+			 * 计时器组件：计时，暂停计时，停止计时 
+			 * @param {Object} tContainer 必需
+			 * @param {Object} stopBtn 可选
+			 * @param {Object} pauseBtn 可选
+			 * 调用格式：var time = new Timing(timerEle, stopBtn, pauseBtn);time.start();time.stop();time.pause();
+			 */
+			function Timing(tContainer, startBtn, stopBtn, pauseBtn) {
+				var timer = null;
+				var that = this;
+				var m0 = 0;
+				var s0 = 0;
+				var pauseFlag = true;
+				this.start = function(m1, s1) {
+					var m = parseInt(m1) || m0;
+					var s = parseInt(s1) || s0;
+					timer = setInterval(function() {
+						if(s < 10) {
+							if(m < 10) {
+								tContainer.innerText = '0' + m + ':0' + s;
+							} else {
+								tContainer.innerText = m + ':0' + s;
+							}
+						} else {
+							if(m < 10) {
+								tContainer.innerText = '0' + m + ':' + s;
+							} else {
+								tContainer.innerText = m + ':' + s;
+							}
+						}
+						s++;
+						if(s > 59) {
+							s = 0;
+							m++;
+						}
+					}, 1000);
+				};
+
+				this.stop = function() {
+					if(timer) {
+						clearInterval(timer);
+						timer = null;
+					}
+				};
+
+				this.pause = function() {
+					var m, s;
+					if(pauseFlag) {
+						if(timer) {
+							clearInterval(timer);
+							timer = null;
+						}
+					} else {
+						var text = tContainer.innerText.trim();
+						m = text.split(":")[0];
+						s = text.split(":")[1];
+						//						console.log(m +" " + s );
+						that.start(m, s);
+					}
+					pauseFlag = !pauseFlag;
+				}
+
+				//绑定暂停和停止事件
+				pauseBtn.onclick = function(e) {
+					that.pause();
+				};
+				stopBtn.onclick = function(e) {
+					that.stop();
+				};
+				startBtn.onclick = function(e) {
+					that.start();
+//					startBtn.onclick = null;
+				}
+			};
+
+			function countDownTiming(ele) {
+				var m = 29;
+				var s = 59;
+				setInterval(function() {
+					if(s < 10) {
+						ele.innerText = m + ':0' + s;
+						//						$('#time').html(m + ':0' + s);
+					} else {
+						//						$('#time').html(m + ':' + s);
+						ele.innerText = m + ':' + s;
+					}
+					s--;
+					if(s < 0) {
+						s = 59;
+						m--;
+					}
+				}, 1000)
+			};
+			//			countDownTiming(timeEle);
+		</script>
+	</body>
+
+</html>
