@@ -401,6 +401,7 @@
 				this.start = function(m1, s1) {
 					var m = parseInt(m1) || m0;
 					var s = parseInt(s1) || s0;
+					timer = null;
 					timer = setInterval(function() {
 						if(s < 10) {
 							if(m < 10) {
