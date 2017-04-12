@@ -207,7 +207,12 @@ table td:hover,table th :hover{
 }
 
 
-
+.QR-code{
+	display: flex;
+	margin-top:20px;
+	align-items: center;
+	justify-content: center;
+}
 
 .presitation h3 {
 	margin-bottom: 80px;
