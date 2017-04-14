@@ -2,11 +2,12 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
-		<title>Lilian's Resume</title>
+		<title>Lilian</title>
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
-		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/myAnimate.css">
 		<link rel="stylesheet" href="css/index.css">
+		<!--<link rel="stylesheet" href="css/animate.css">-->
+		
 
 		<style>
 			.section {
@@ -154,39 +155,43 @@
 			</div>
 			<div class="section page3">
 				<h3>Skills</h3>
+					<!--<div id="skills" class = "animated"style="width: 340px;height:340px;"></div>-->
+				
 				<div class="container">
-					<ol class="text">
+					<ol class="text animated oltext">
 						<li>精通Javascript、HTML5和CSS3等Web前端技术，能熟练编写代码，</li>
 						<li>有良好注释及文档撰写习惯，能参与前端代码编写规范的制定；</li>
 						<li>对用户体验、交互操作流程有深刻理解，在可用性、性能、实现完美界面效果等方面有实践经验；</li>
-						<li>较强的团队协作能力与沟通能力，并与设计人员，程序开发人员进行较好的配合；</li>
+						<li>较强的团队协作能力与沟通能力，与设计人员，程序开发人员进行较好的配合；</li>
 					</ol>
-					<div id="skills" style="width: 340px;height:340px;"></div>
+
 				</div>
+
+				
 			</div>
 			<div class="section page4">
 				<h3>Projects</h3>
-				<div class="projects">
-					<a class="project-1" href="http://www.chenyuelili.com" target="_blank">
+				<div class="projects animated">
+					<a class="project-1 animated" href="http://www.chenyuelili.com" target="_blank">
 						<div>
 							<span>个人博客</span>
 							<p>Blog</p>
 						</div>
 					</a>
-					<a class="project-1" href="http://test.yizhipbb.cn/develop/my/laravel/public/index.php/user/login" target="_blank">
+					<a class="project-1 animated" href="http://test.yizhipbb.cn/develop/my/laravel/public/index.php/user/login" target="_blank">
 						<div>
 							<span>家教APP</span>
 							<p>Tutor APP</p>
 						</div>
 					</a>
 
-					<a class="project-1" href="http://test.novaxmu.cn/pro/index" target="_blank">
+					<a class="project-1 animated" href="http://test.novaxmu.cn/pro/index" target="_blank">
 						<div>
 							<span>外贸电商</span>
 							<p>vip.com</p>
 						</div>
 					</a>
-					<a class="project-1" href="http://test.novaxmu.cn/templates/cargo/chris/dist/index.html" target="_blank">
+					<a class="project-1 animated" href="http://test.novaxmu.cn/templates/cargo/chris/dist/index.html" target="_blank">
 						<div>
 							<span>物资管理</span>
 							<p>Manage Item </p>
@@ -194,9 +199,8 @@
 					</a>
 				</div>
 				<div class = "QR-code">
-					<img src="assets/img/blog.png" width="200px"/>
-				
-					<img src="assets/img/tutor.png" width="200px"/>
+					<img src="assets/img/tutor.png" width="200px" class= "QR-blog animated"/>
+					<img src="assets/img/blog.png" width="200px" class= "QR-blog animated"/>
 				</div>
 				<!--<div class="project-main clear">-->
 				<!--<div class="project-nav">
@@ -238,17 +242,17 @@
 					<img src="assets/img/登山.jpg" class="img6 animated" height="200px;">
 				</div>
 			</div>
-			<div class="section page6">
+			<div class="section page6 ">
 				<h3>人生格言：自律给我自由</h3>
-				<p class="request">我期待一个自我展示的舞台</p>
-				<div class="wrapper">
-					<img src="assets/img/resume.png" width="200px" class="weichat" />
-					<div class="text">
+				<p class="request  ">我期待一个自我展示的舞台</p>
+				<div class="wrapper clear">
+					<img src="assets/img/resume.png" width="200px" class="weichat animated" />
+					<div class="mtext animated">
 						<h4>陈跃利</h4>
 						<!--<hr>-->
 						<p>Phone: 18860028875 </p>
 						<p>Email: 896671603@qq.com</p>
-						<p>Advantage：扎实的前端基础，丰富的实战经验；<br/>善于归纳总结，随时更新的技术博客.</p>
+						<p class= "advantage animated">Advantage：扎实的前端基础，丰富的实战经验；<br/>善于归纳总结，随时更新的技术博客.</p>
 						<!--<a href="https://chenyueli.github.io/Resume/" target="_blank">https://chenyueli.github.io/Resume/</a>-->
 						<!--<hr>-->
 					</div>
@@ -276,13 +280,16 @@
 					anchors: ["page1", "page2", "page3", "page4", "page5", "page6"],
 					afterLoad: function(anchorLink, index) {
 						if(index == 2) {
-//						
 
-
-							
 						}
-						if(index == 3) {
-							
+						if(index == '3') {
+//							document.getElementById("skills").classList.add("Fade-In");
+						}
+						if(index == 4) {	
+							document.getElementsByClassName("projects")[0].classList.add("Fade-In");
+							document.getElementsByClassName("QR-blog")[0].classList.add("Fade-In");
+							document.getElementsByClassName("QR-blog")[1].classList.add("Fade-In");
+
 						}
 						if(index == 5) {
 							document.getElementsByClassName("img1")[0].classList.add("fadeInImg1");
@@ -293,8 +300,13 @@
 							document.getElementsByClassName("img6")[0].classList.add("fadeInImg6");
 						}
 						if(index == 6) {
-							document.getElementsByClassName("weichat")[0].classList.add("fadeInImg4");
-							document.getElementsByClassName("text")[0].classList.add("fadeInImg3");
+//							alert("a");
+							document.getElementsByClassName("weichat")[0].classList.add("fadeInLeft");
+							document.getElementsByClassName("mtext")[0].classList.add("fadeInRight");
+							setTimeout(function(){
+								document.getElementsByClassName("advantage")[0].classList.add("flipInX");
+							},1000)
+
 						}
 					},
 					onLeave: function(index, direction) {
@@ -302,7 +314,15 @@
 
 						}
 						if(index == '3') {
-
+//							document.getElementById("skills").classList.remove("Fade-In");
+						}
+						if(index == '4') {
+							setTimeout(function(){
+							document.getElementsByClassName("projects")[0].classList.remove("Fade-In");
+								
+							document.getElementsByClassName("QR-blog")[0].classList.remove("Fade-In");
+							document.getElementsByClassName("QR-blog")[1].classList.remove("Fade-In");
+							},500);
 						}
 						if(index == '5') {
 							setTimeout(function() {
@@ -314,6 +334,15 @@
 								document.getElementsByClassName("img6")[0].classList.remove("fadeInImg6");
 							}, 500);
 						}
+						if(index == '6') {
+							setTimeout(function() {
+								document.getElementsByClassName("weichat")[0].classList.remove("fadeInLeft");
+								document.getElementsByClassName("mtext")[0].classList.remove("fadeInRight");
+								document.getElementsByClassName("advantage")[0].classList.remove("flipInX");
+								
+							}, 500);
+						}
+						
 					}
 				});
 
@@ -402,7 +431,6 @@
 				this.start = function(m1, s1) {
 					var m = parseInt(m1) || m0;
 					var s = parseInt(s1) || s0;
-					timer = null;
 					timer = setInterval(function() {
 						if(s < 10) {
 							if(m < 10) {
@@ -458,7 +486,7 @@
 				};
 				startBtn.onclick = function(e) {
 					that.start();
-										startBtn.onclick = null;
+					//					startBtn.onclick = null;
 				}
 			};
 		</script>
