@@ -88,8 +88,8 @@ table td,table th {
 }
 table td:hover,table th :hover{
 	color:rgb(255, 153, 0);
-	color:#000;
-	font-size:18px;
+	color:red;
+	/*font-size:18px;*/
 }
 
 /*page 3*/
