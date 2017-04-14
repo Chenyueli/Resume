@@ -121,6 +121,7 @@ table td:hover,table th :hover{
 	
 	position: relative;
 	margin: -50px auto 0;
+	opacity: 0;
 }
 
 
@@ -132,6 +133,7 @@ table td:hover,table th :hover{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	opacity: 0;
 }
 .projects> a {
 	text-decoration: none;
@@ -214,7 +216,9 @@ table td:hover,table th :hover{
 	justify-content: center;
 }
 .QR-code img{
-	margin:20px;
+	margin:40px;
+	opacity: 0;
+	border-radius: 20px;
 }
 
 .presitation h3 {
@@ -278,11 +282,32 @@ table td:hover,table th :hover{
 
 /*page 6*/
 .page6 .wrapper{
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	margin-top: 50px;
+	/*display: flex;*/
+	position:relative;
+	width:660px;
+	height: 200px;;
+	/*border:1px solid red;*/
+	
+	/*justify-content: center;*/
+	/*align-items: flex-end;*/
+	margin: 80px auto 0 auto;
+	/*padding-left:20px;*/
+	
 
+}
+.page6 .weichat{
+	position:absolute;
+	left:0;
+	margin-left: 60px;
+	opacity:0;
+	border-radius: 20px;
+	
+}
+.page6 .mtext{
+	position:absolute;
+	right: 0px;
+	bottom:0;
+	opacity:0;
 }
 .page6 h4{
 	font-size : 32px;
@@ -298,10 +323,10 @@ table td:hover,table th :hover{
 .page6 .weichat{
 	margin-right: 40px;
 }
-.page6 .text{
+.page6 .mtext{
 	text-align: left;
 }
-.page6 .text p,.page6 .text a{
+.page6 .mtext p,.page6 .mtext a{
 	line-height: 26px;
 	font-weight: 400;
 	font-family: arial;
