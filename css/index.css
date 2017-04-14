@@ -72,6 +72,7 @@ h3 {
 table{
 	width:80%;
 	margin:0 auto;
+	font-size:18px;
 	/*word-break:none;*/ 
 	/*word-wrap:none;*/
 }
